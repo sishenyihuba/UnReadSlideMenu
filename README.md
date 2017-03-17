@@ -23,5 +23,19 @@ This is my implemetation about this elegant slide menu step by step. No CALayer 
 - It is a custom trasation when your finger drag from the edge of right to left, it will active the tiny slide menu
 - all the code is in this demo
 
+## How to
+How can u use that springExpandView in your proj?
+Show u the code:  just 3 lines of code
+```
+extention UnreadSpringExpandViewController  : UIScrollViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.isDragging {
+            self.springMenu.progress = scrollView.contentOffset.x/self.springMenu.bounds.width
+        }
+    }
+}
+```
+
+
 ## Thanks
-UnRead is my favourite Rss App in my iPhone.Thanks to **Jared Sinclair** who create that fatastic App.
+UnRead is my favourite Rss App in my iPhone.Thanks to **Jared Sinclair** who create that fatastic App. 
